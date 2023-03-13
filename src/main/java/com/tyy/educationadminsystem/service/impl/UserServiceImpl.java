@@ -78,7 +78,9 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
         User user0 =new User();
         BeanUtils.copyProperties(user,user0);
         user0.setCreateTime(new Date());
-        user0.setId(UUID.randomUUID().toString());
+//        String id =UUID.randomUUID().toString().replace("-","");
+//        System.out.println("id::"+id);
+//        user0.setId(id);
         int insert = userMapper.insert(user0);
         if (insert>0){
             return ResponseResult.success();
