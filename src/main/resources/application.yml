@@ -3,7 +3,7 @@ spring:
   profiles:
     active: mac
   application:
-    name: springbootcli
+    name: educationadminsystem
   mvc:
     pathmatch:
       matching-strategy: ant_path_matcher
