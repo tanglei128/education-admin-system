@@ -11,7 +11,7 @@ spring:
   main:
     allow-circular-references: true
   datasource:
-    url: jdbc:mysql://120.48.55.43:3306/springbootcli?useUnicode=true&characterEncoding=UTF-8&useSSL=false
+    url: jdbc:mysql://120.48.55.43:3306/eas?useUnicode=true&characterEncoding=UTF-8&useSSL=false
     username: root
     password: psp128_master9515!
     driver-class-name: com.mysql.jdbc.Driver

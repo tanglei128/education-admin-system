@@ -1,22 +1,20 @@
-package com.tyy.educationadminsystem.entity;
+package com.tyy.educationadminsystem.vo;
 
-import com.baomidou.mybatisplus.annotation.TableField;
-import com.baomidou.mybatisplus.annotation.TableName;
+import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
-import java.io.Serializable;
 import java.util.Date;
-
-@TableName("t_user")
 @Data
-public class User extends BaseEntity implements Serializable{
+public class UserVo{
     private String id;
+    @ApiModelProperty(value = "用户名", required = true)
     private String name;
+    @ApiModelProperty(value = "密码", required = true)
     private String pwd;
     private String realName;
     private Integer age;
     private Integer sex;//0:女，1：男
-    private Date birthday;
+    private String birthday;
     private String phone;
     private Integer classNum;//年级号
     private Integer status;//状态0：禁用，1启用
