@@ -14,6 +14,10 @@ public class ResponseResult<T> extends BaseResponse{
 
         return createResult(RespCode.SUCCESS.getCode(),RespCode.SUCCESS.getMessage());
     }
+    public static<T> ResponseResult success(String msg){
+
+        return createResult(RespCode.SUCCESS.getCode(),msg);
+    }
 
     public static<T> ResponseResult error(String msg){
 

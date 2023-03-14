@@ -15,7 +15,7 @@ public class ClearTokenInterceptor implements HandlerInterceptor {
     @Autowired
     private RedisUtil redisUtil;
 
-    List<String> whiteUrls = Arrays.asList("/v1/login","/v1/user/add");
+    List<String> whiteUrls = Arrays.asList("/v1/user/login","/v1/user/register");
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)

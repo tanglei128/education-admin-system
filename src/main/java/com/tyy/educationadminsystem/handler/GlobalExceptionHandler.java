@@ -20,7 +20,7 @@ public class GlobalExceptionHandler  {
 //        String exNm = exception.getClass().getName();
         logger.error("请求出现异常:"+ request.getRequestURI()+","+exception.getMessage());
         if (exception instanceof BusinessException){
-            return ResponseResult.error(exception.getMessage());
+            return ResponseResult.success(exception.getMessage());
         }else if (exception instanceof AuthException){
             return ResponseResult.error(RespCode.AUTH_FAILED.getCode(),exception.getMessage());
         } else {
