@@ -9,4 +9,9 @@ public class PageVo {
     private Long current;
     @ApiModelProperty(value = "每页条数", required = true)
     private Long size;
+    public PageVo (){}
+    public PageVo (Long current,Long size){
+        this.current = current;
+        this.size = size;
+    }
 }

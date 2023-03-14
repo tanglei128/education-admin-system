@@ -32,9 +32,10 @@ public class UserController {
         return userService.insertUser(user);
     }
 
-    @ApiOperation("查询用户资料")
+    @ApiOperation("查询用户列表")
     @PostMapping (value = "/query")
-        public ResponseResult queryUser(@RequestBody PageVo page,@RequestParam String name ){
+        public ResponseResult queryUser(@RequestParam Long current,@RequestParam Long size,@RequestParam(required=false) String name ){
+        PageVo page = new PageVo(current,size);
         return userService.queryUser(name,page);
     }
 }
