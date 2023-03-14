@@ -3,7 +3,7 @@ package com.tyy.educationadminsystem.vo;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
-import java.util.Date;
+
 @Data
 public class UserVo{
     private String id;

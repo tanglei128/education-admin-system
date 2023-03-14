@@ -11,6 +11,7 @@ import com.tyy.educationadminsystem.result.ResponseResult;
 import com.tyy.educationadminsystem.service.UserService;
 import com.tyy.educationadminsystem.utils.ConstantUtil;
 import com.tyy.educationadminsystem.utils.RedisUtil;
+import com.tyy.educationadminsystem.vo.PageVo;
 import com.tyy.educationadminsystem.vo.UserVo;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.BeanUtils;
@@ -86,5 +87,16 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
             return ResponseResult.success();
         }
         throw new BusinessException("用户创建失败");
+    }
+
+    @Override
+    public ResponseResult queryUser(String name, PageVo page) {
+        Page<User> pageParam = new Page<>(page.getCurrent(), page.getSize());
+        QueryWrapper<User> wrapper = new QueryWrapper<>();
+        if (null!=name&&!("".equals(name))){
+            wrapper.lambda().eq(User::getName,name);
+        }
+        Page<User> userPage = userMapper.selectPage(pageParam, wrapper);
+        return ResponseResult.success(userPage);
     }
 }
