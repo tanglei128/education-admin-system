@@ -1,5 +1,6 @@
 package com.tyy.educationadminsystem.controller;
 
+import com.github.xiaoymin.knife4j.annotations.ApiOperationSupport;
 import com.tyy.educationadminsystem.common.exception.BusinessException;
 import com.tyy.educationadminsystem.entity.Course;
 import com.tyy.educationadminsystem.result.ResponseResult;
@@ -28,6 +29,7 @@ public class CourseController {
     }
 
     @ApiOperation("创建学科")
+    @ApiOperationSupport(ignoreParameters = {"course.id","course.createTime"})
     @PostMapping(value = "/add")
     public ResponseResult addCourse(@RequestBody Course course){
         course.setCreateTime(new Date());
