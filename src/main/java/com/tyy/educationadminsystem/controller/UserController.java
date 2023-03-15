@@ -29,6 +29,7 @@ public class UserController {
     @ApiOperation("注册用户接口")
     @PostMapping(value = "/register")
     public ResponseResult insertUser(@RequestBody UserVo user){
+
         return userService.insertUser(user);
     }
 
